@@ -1,0 +1,18 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: actor-general
+spec:
+  type: state.azure.cosmosdb
+  version: v1
+  metadata:
+  - name: url
+    value: https://<<COSMOSDB RESOURCE NAME>>.documents.azure.com:443/
+  - name: masterKey
+    value: "<<COSMOSDB KEY>>"
+  - name: database
+    value: "<<COSMOSDB DATABASE>>"
+  - name: collection
+    value: "<<COSMOSDB COLLECTION>>"
+  - name: actorStateStore
+    value: "true"

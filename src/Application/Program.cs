@@ -1,20 +1,21 @@
 ﻿using Application;
 using Dapr.Actors;
 using Dapr.Actors.Client;
+using Dapr.Actors.Runtime;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
 services.AddLogging(x => x.AddConsole());
-services.AddDaprSidekick(configure => {
-    configure.Sidecar = new() {
-        AppId = "demo",
-        ResourcesDirectory = "dapr-components",
-        DaprHttpPort = 3500,
-        DaprGrpcPort = 50001
-    };
-});
+// services.AddDaprSidekick(configure => {
+//     configure.Sidecar = new() {
+//         AppId = "demo",
+//         ResourcesDirectory = "dapr-components",
+//         DaprHttpPort = 3500,
+//         DaprGrpcPort = 50001
+//     };
+// });
 
 services.AddActors(configure => {
     configure.RemindersStoragePartitions = 3;

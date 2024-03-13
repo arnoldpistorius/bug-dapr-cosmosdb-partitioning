@@ -101,3 +101,5 @@ The expected behavior is that there is 1 partitionId created with 3 partitions f
 
 ## Conclusion
 Storage of actor reminders is broken in CosmosDB when using Dapr runtime v1.10.5. The data is stored in the wrong place and the partitioning is incorrect. This is a regression bug as it worked in Dapr runtime v1.10.4.
+
+If the scenario is executed with Redis as actor state store. The reminder partitions are created and populated as expected. This indicates it is a bug with the CosmosDB (actor) state store implementation.

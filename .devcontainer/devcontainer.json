@@ -20,7 +20,7 @@
 			"dockerDashComposeVersion": "latest"
 		}
 	},
-	"postCreateCommand": "dapr uninstall --all; dapr init",
+	"postCreateCommand": "dapr uninstall --all; dapr init --runtime-version 1.10.5",
 	"customizations": {
 		"vscode": {
 			"extensions": [
